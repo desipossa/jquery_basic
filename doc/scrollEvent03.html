@@ -67,20 +67,41 @@
         <h2>나는 h2</h2>
         <div class="otb"></div>
     </section>
+    <section class="content">
+        <h2>나는 h2</h2>
+        <div class="otb"></div>
+    </section>
+    <section class="content">
+        <h2>나는 h2</h2>
+        <div class="otb"></div>
+    </section>
     <script>
-        $(function () {
+        // $(function () {
+        //     $(window).on('scroll', function () {
+        //         var sct = $(window).scrollTop();
+        //         $('.content').each(function () {
+        //             var _thisTOP = $(this).offset().top;
+        //             console.log(_thisTOP);
+        //             if (sct > _thisTOP - 200) {
+        //                 $(this).addClass('on')
+        //             } else {
+        //                 $(this).removeClass('on')
+        //             }
+        //         })
+        //     })
+        // });
 
-            var conP = $('.content').offset().top;
 
-            $(window).on('scroll', function () {
-                var sct = $(window).scrollTop();
-                console.log(sct, conP);
-                if (sct > conP - 300) {
-                    $('.content').addClass('on')
-                } else {
-                    $('.content').removeClass('on')
-                }
+        const sc = document.querySelectorAll('.content');
+
+        window.addEventListener('scroll', () => {
+            let sct = window.scrollY;
+            sc.forEach((it) => {
+                let _thisTOP = it.offsetTop;
+                console.log(_thisTOP);
+                sct > _thisTOP - 200 ? it.classList.add('on') : it.classList.remove('on')
             })
+
         })
     </script>
 </body>

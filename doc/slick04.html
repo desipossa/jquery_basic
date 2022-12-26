@@ -275,17 +275,3 @@
 </body>
 
 </html>
-
-const shopdata = r.data.slice(85, 195).map((it) => {
-return {
-id: it.no,
-name: it.ebk_nm,
-src: it.aut_nm,
-brand: it.pblshr,
-gnr: it.gnr,
-total: it.totalCount,
-des: it.cn_intro,
-pn: pageNo,
-type: it.avlbl_envrmt,
-};
-});
